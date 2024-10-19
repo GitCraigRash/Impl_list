@@ -24,3 +24,8 @@ Here’s a breakdown of the key ideas in the passage:
         On the other hand, if the data is not separable from the origin, the model will eventually generalize perfectly (asymptotically). This means that the model will, over time, converge to a solution that performs well on unseen data. However, overfitting might still occur in the early stages of training before the model stabilizes and finds a good boundary.
 
 In summary, the reference to the "origin" highlights whether the linear boundary used to classify the data passes through the point where all features are zero, and this has implications on how the model fits and generalizes.
+
+
+
+I know know whtat I don't understand why an origin is necessary or the setup of the paper. I know there are two classes and the model is only using a singl line to try to serpate them. 
+I don't know how it generates the line. It could indicate the tipping point where the model always chooses class 0 over class 1.
