@@ -40,4 +40,5 @@ Potential insite: If I can identify uses cases for this paper automatically in c
 From what I understand, the data must be linearly seperatable from the origin. I other word, the origin must be roughly in the center of the data distribution. if it is far outside or highly skewed, grokking will likely never occure. 
 
 
-While its seems the paper's discovery is very simple: Given a isomorphic distribution
+While its seems the paper's discovery is very simple: When trying to classify binary classes in a isotropic normal distrbution with very noisy features. Assumming number of features < 1/2 * N, Grokking will likely occure. 
+But there seems to be so much more observations in the paper that seem unrelated to teh conlcusins given. Some appear to focus on the time to convergence and how to calculate it. 
