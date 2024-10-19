@@ -38,3 +38,6 @@ Potential insite: It oculd be that this binary classificaiotn is a toy model. Mu
 Potential insite: If I can identify uses cases for this paper automatically in certain AI models, such as when a model is very good in trainig at a task but terrible in implementation, I could use a search function to identify which classes are confusing and computationally detect if Grokking will work. 
 
 From what I understand, the data must be linearly seperatable from the origin. I other word, the origin must be roughly in the center of the data distribution. if it is far outside or highly skewed, grokking will likely never occure. 
+
+
+While its seems the paper's discovery is very simple: Given a isomorphic distribution
