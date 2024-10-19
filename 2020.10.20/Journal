@@ -35,3 +35,10 @@ To get to the point where I can make a model in colab and display that I underst
 
 Potential insite: It oculd be that this binary classificaiotn is a toy model. Multi classification will require a lot more dimensions but the principle of how the classes are seperated may be the same. I say this because in higher dimensions there are many more "right" angles. 
 
+Potential insite: If I can identify uses cases for this paper automatically in certain AI models, such as when a model is very good in trainig at a task but terrible in implementation, I could use a search function to identify which classes are confusing and computationally detect if Grokking will work. 
+
+
+
+
+
+
