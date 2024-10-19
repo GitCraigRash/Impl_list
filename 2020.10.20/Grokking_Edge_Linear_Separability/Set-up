@@ -1,1 +1,24 @@
 
+normal distribution =  isotropic normal distribution with
+diagonal covariance, xi ∼ N (0, σId) where Id is the d × d identity matrix and σ > 0.
+
+Generate random 2 class data with normal distribution and very noisy features where N number of examples and d = number of features and y =r/n.
+Set y < 1/2 
+Use logistic regression to train a model for one or two epochs.
+Test training and validation accuracy. 
+Train for many additional epochs. 
+Test training and validation accuracy.
+
+Generate random 2 class data with highly skewed (cresent/non-symmetrical shape) distribution
+Generate random 2 class data with normal distribution and very noisy features.
+Use logistic regression to train a model for one or two epochs.
+Test training and validation accuracy. 
+Train for many additional epochs. 
+Test training and validation accuracy.
+
+Generate random 2 class data with normal distribution and very noisy features where N number of examples and d = number of features and y =r/n.
+Set y > 1/2 
+Use logistic regression to train a model for one or two epochs.
+Test training and validation accuracy. 
+Train for many additional epochs. 
+Test training and validation accuracy.
