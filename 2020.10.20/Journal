@@ -29,3 +29,7 @@ In summary, the reference to the "origin" highlights whether the linear boundary
 
 I know know whtat I don't understand why an origin is necessary or the setup of the paper. I know there are two classes and the model is only using a singl line to try to serpate them. 
 I don't know how it generates the line. It could indicate the tipping point where the model always chooses class 0 over class 1.
+
+
+To get to the point where I can make a model in colab and display that I understand the concept, I need to be able to generate a environment like the paper and apply whatever technique they are suggesting.
+
