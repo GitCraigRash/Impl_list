@@ -42,3 +42,11 @@ From what I understand, the data must be linearly seperatable from the origin. I
 
 While its seems the paper's discovery is very simple: When trying to classify binary classes in a isotropic normal distrbution with very noisy features. Assumming number of features < 1/2 * N, Grokking will likely occure. 
 But there seems to be so much more observations in the paper that seem unrelated to teh conlcusins given. Some appear to focus on the time to convergence and how to calculate it. 
+
+2024.10.21
+I want to ask the AI to generate code that will recreate the white paper's experument. 
+I need to make sure the code it generates accratly reflects the white paper experument. 
+I am thinking about asking the aI to evaluate it's own code by giving it a parapgraph of
+the whitepaper to check it's work.
+
+Are the distributions garenteed to be able to be seperated?
