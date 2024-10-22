@@ -50,3 +50,148 @@ I am thinking about asking the aI to evaluate it's own code by giving it a parap
 the whitepaper to check it's work.
 
 Are the distributions garenteed to be able to be seperated?
+
+2024.10.22
+I am using this code to run experuments to replicate grokking:
+  
+  '''
+  import numpy as np
+  import matplotlib.pyplot as plt
+  from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+  
+  # Sigmoid function for logistic regression
+  def sigmoid(z):
+      return 1 / (1 + np.exp(-z))
+  
+  # Cross-entropy loss
+  def cross_entropy_loss(S, b, X, y):
+      z = X.dot(S) + b
+      return np.mean(np.log(1 + np.exp(z)))
+  
+  # Compute accuracy
+  def accuracy(S, b, X, y):
+      preds = X.dot(S) + b
+      predicted_labels = np.heaviside(-preds, 0)  # Heaviside function for accuracy calculation
+      return np.mean(predicted_labels == y)
+  
+  # Gradient Descent Function
+  def logistic_regression_gd(N, d, sigma, nu, num_steps):
+      """
+      Perform logistic regression using gradient descent.
+      
+      Parameters:
+      - N (int): Number of points (samples)
+      - d (int): Number of dimensions (features)
+      - sigma (float): Standard deviation of the feature distribution
+      - nu (float): Learning rate for gradient descent
+      - num_steps (int): Number of steps to run the gradient descent
+      
+      Returns:
+      - losses (list): List of cross-entropy losses over training
+      - accuracies (list): List of accuracies over training
+      - confusion_matrix: Confusion matrix of the final predictions
+      """
+      # Generate data
+      X = np.random.normal(0, sigma, (N, d))  # N samples, each with d features
+      true_labels = np.ones(N)  # All labels are 1 (can modify for binary classification)
+  
+      # Initialize weights and bias
+      S = np.random.randn(d)  # Weight vector of size d
+      b = np.random.randn()    # Bias scalar
+  
+      # Containers to store loss and accuracy
+      losses = []
+      accuracies = []
+  
+      # Gradient descent loop
+      for step in range(num_steps):
+          # Compute the prediction
+          z = X.dot(S) + b
+          y_pred = sigmoid(z)
+          
+          # Compute the gradients
+          gradient_S = X.T.dot(y_pred - true_labels) / N  # Gradient w.r.t S
+          gradient_b = np.sum(y_pred - true_labels) / N   # Gradient w.r.t b
+          
+          # Update weights and bias
+          S -= nu * gradient_S
+          b -= nu * gradient_b
+          
+          # Calculate and store loss and accuracy
+          loss = cross_entropy_loss(S, b, X, true_labels)
+          acc = accuracy(S, b, X, true_labels)
+          losses.append(loss)
+          accuracies.append(acc)
+          
+          if step % 100 == 0:
+              print(f"Step {step}, Loss: {loss:.4f}, Accuracy: {acc:.4f}")
+      
+      # Final predictions for confusion matrix
+      preds = X.dot(S) + b
+      predicted_labels = np.heaviside(-preds, 0)  # Heaviside function threshold for binary classification
+  
+      # Confusion matrix
+      cm = confusion_matrix(true_labels, predicted_labels)
+      
+      return losses, accuracies, cm
+  
+  # Function to plot the results
+  def plot_results(losses, accuracies, cm):
+      # Plotting the loss and accuracy over time
+      plt.figure(figsize=(12, 5))
+  
+      # Loss curve
+      plt.subplot(1, 2, 1)
+      plt.plot(losses, label="Loss")
+      plt.title("Cross-Entropy Loss over Time")
+      plt.xlabel("Iteration")
+      plt.ylabel("Loss")
+      plt.legend()
+  
+      # Accuracy curve
+      plt.subplot(1, 2, 2)
+      plt.plot(accuracies, label="Accuracy", color='orange')
+      plt.title("Accuracy over Time")
+      plt.xlabel("Iteration")
+      plt.ylabel("Accuracy")
+      plt.legend()
+  
+      plt.tight_layout()
+      plt.show()
+  
+      # Display confusion matrix
+      disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=[0, 1])
+      disp.plot()
+      plt.title("Confusion Matrix")
+      plt.show()
+  
+  # Example usage
+  N = 1000          # Number of points
+  d = 500           # Number of dimensions
+  sigma = 1.0       # Feature standard deviation
+  nu = 0.0001         # Learning rate
+  num_steps = 1000  # Number of steps
+  
+  # Run gradient descent logistic regression
+  losses, accuracies, cm = logistic_regression_gd(N, 5, sigma, nu, num_steps)
+  
+  # Plot the results
+  plot_results(losses, accuracies, cm)
+  
+  # Run gradient descent logistic regression
+  losses, accuracies, cm = logistic_regression_gd(N, 460, sigma, nu, num_steps)
+  
+  # Plot the results
+  plot_results(losses, accuracies, cm)
+  
+  # Run gradient descent logistic regression
+  losses, accuracies, cm = logistic_regression_gd(N, 540, sigma, nu, num_steps)
+  
+  # Plot the results
+  plot_results(losses, accuracies, cm)
+'''
+
+So far it has the strange effect if decreasing the accuracy and increaseing the loss every step. 
+
+Its unclear why the loss is going donw but the accuracy remains 50%ish. it's like there is no way to seperate the data. 
+
