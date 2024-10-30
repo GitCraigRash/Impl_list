@@ -1,1 +1,58 @@
+How can I combine this with efficient ML?
+My first thought is a credit card or ID situation where the prover is trying to make sure that the individual is truely the correct person.
 
+What does this Paper achive?
+
+2024.10.20
+Here is my current idea as to how to solve this: 
+Find a library that does list-recovery
+simulate a transmission to the device
+return possible outcomes and evaluate time and accuracy.
+
+Repeate but with quantum.
+
+2024.10.21
+5:54am
+Goal: Set up problem set and run classical method as baseline before using quantum method.
+
+12:17pm
+Trying to understand how the probelm goes, I thought it was that the algorhtym identified errronous transmissions and corrected to the highest probability
+but now I a questioning the entire setup of the problem. Because I don't know if the data is pariedied or not. I will look into the quantom solutino to see if there is any paritying. 
+
+12:41pm
+I have desided to make entreies every 15m to improve my abilty to stay on track and then reflect every 45 minutes to 1 hour on my approch to the problems.
+
+As of now I am trying to make a proper simulation of data transmitting and being restored by both classical and quantum algorythm. 
+
+1:59pm returned from some errends.
+The metric being measured in this passage is the fraction of constraints satisfied in the max-XORSAT optimization problem. 
+Specifically, they are comparing two optimization methods—DQI (Dynamic Quantum Interaction) with belief propagation decoding and simulated annealing—based
+on how well they perform in terms of satisfying the constraints of the problem.
+Here’s a breakdown of the key metric:
+Fraction of constraints satisfied: This refers to the proportion of the total constraints in the max-XORSAT instance that are met by a given solution.
+In this case, DQI finds solutions satisfying 83.5% of the constraints, while simulated annealing satisfies 81.5%.
+This metric is critical for comparing the effectiveness of different algorithms in solving the problem.
+
+2:21pm
+Now I need to find out what metric the paper is using so I can make sure I am comparing like to like.
+
+2:37pm Cleaning room for mental switch
+
+2:53pm
+Working on defining the metric. It seems more compilcated then simply "We caught this percentage of all errors."
+
+7:03pm
+I may switch to another paper just to see if that will give me ideas. 
+
+2024.10.22
+12:23pm
+Figuring out how to calcuate eignevalues. They are relevant because I am wondering what ⌈log_2 ℓ⌉ means becayse it is used 
+to calcuate the weight register which is used for solving max-XORSAT.
+
+2024.10.28
+8:38am
+10:00
+Learning what is a Max-LINSAT
+  A combination problem that finds a set of binary that aims to satify the most XOR equations. I don't know how it knows what answer satisfies the equations(true or false or 1 or 0)
+10:50am
+Learning what is a 
