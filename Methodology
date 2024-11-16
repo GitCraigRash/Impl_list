@@ -22,3 +22,5 @@ Knowing what to ask the AI requres me to know the goal. This way I will know whe
 other improvements are needed. 
 
 This could of course be solved if I ask the AI to look at the document and summarize the steps itself.
+
+The probelm with that is the input. Some of the equations may not render correctly, which would be highly misinterpereted by the AI.
