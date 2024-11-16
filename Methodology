@@ -24,3 +24,4 @@ other improvements are needed.
 This could of course be solved if I ask the AI to look at the document and summarize the steps itself.
 
 The probelm with that is the input. Some of the equations may not render correctly, which would be highly misinterpereted by the AI.
+Rather, I can create a tool that will adapt the format to something the AI can understand. Hoepfully by providing the AI with examples and allowing it to update itself. 
