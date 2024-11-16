@@ -25,3 +25,4 @@ This could of course be solved if I ask the AI to look at the document and summa
 
 The probelm with that is the input. Some of the equations may not render correctly, which would be highly misinterpereted by the AI.
 Rather, I can create a tool that will adapt the format to something the AI can understand. Hoepfully by providing the AI with examples and allowing it to update itself. 
+However, this would be infeasable in large models because I would have to do it on the cloud. Unless I saved the mdoel somewhere, like E3 on AWS, I would loose all progress.
